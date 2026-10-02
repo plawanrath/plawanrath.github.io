@@ -3,6 +3,9 @@
 Personal GitHub Pages site for Plawan Kumar Rath — research papers, code, and open source contributions.
 
 Live: https://plawanrath.github.io
+Personal website: https://www.plawanrath.com/ (articles: https://www.plawanrath.com/articles/)
+
+The page positions plawanrath.com as the canonical personal site and this GitHub Pages page as the research-and-code hub. The two paper-companion interactive articles (Quantization Undoes Alignment, The Smart Pruning Paradox) are cross-linked paper ↔ code ↔ explainer.
 
 ## Contents
 - `index.html` — the single-page site (no build step; GitHub Pages serves it directly from `main`).

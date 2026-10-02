@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plawan Kumar Rath — Research & Open Source</title>
-<meta name="description" content="Personal page of Plawan Kumar Rath: small language models, MLIR constrained decoding, model compression and bias, and open source contributions.">
+<title>Plawan Kumar Rath — Research, Code & Writing</title>
+<meta name="description" content="Plawan Kumar Rath: small language models, MLIR constrained decoding, model compression and bias. Papers, code, open source contributions, and interactive articles. Personal website: plawanrath.com">
+<link rel="canonical" href="https://www.plawanrath.com/">
 <style>
-:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950}
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--purple:#bc8cff}
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 .wrap{max-width:880px;margin:0 auto;padding:48px 24px 64px}
 header{text-align:center;padding:32px 0 8px}
@@ -14,16 +15,25 @@ h1{font-size:2.4rem;margin:0 0 8px}
 .tagline{color:var(--muted);font-size:1.1rem;margin:0}
 .links{margin:20px 0 8px}.links a{color:var(--accent);text-decoration:none;margin:0 10px;font-weight:600}
 .links a:hover{text-decoration:underline}
+.cta{display:inline-block;margin-top:16px;background:#1f6feb;color:#fff !important;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700}
+.cta:hover{background:#388bfd;text-decoration:none !important}
 h2{border-bottom:1px solid var(--border);padding-bottom:8px;margin-top:44px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:16px 0}
 .card h3{margin:0 0 6px;font-size:1.15rem}
+.card h3 a{color:var(--text);text-decoration:none}.card h3 a:hover{color:var(--accent)}
 .venue{color:var(--green);font-weight:600;font-size:.92rem}
+.interactive{color:var(--purple);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}
+.date{color:var(--muted);font-size:.88rem}
 .card p{color:#c9d1d9;margin:10px 0}
 .meta a{color:var(--accent);text-decoration:none;margin-right:14px;font-size:.92rem;font-weight:600}
 .meta a:hover{text-decoration:underline}
-.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 10px;font-size:.78rem;color:var(--muted);margin-right:6px}
+.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 10px;font-size:.78rem;color:var(--muted);margin-right:6px;margin-bottom:4px}
 ul{padding-left:20px} li{margin:8px 0}
 .merged{color:var(--green);font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.small-list{font-size:.95rem}
+.small-list a{color:var(--accent);text-decoration:none}.small-list a:hover{text-decoration:underline}
 footer{margin-top:56px;text-align:center;color:var(--muted);font-size:.9rem}
 footer a{color:var(--accent);text-decoration:none}
 </style>
@@ -34,16 +44,19 @@ footer a{color:var(--accent);text-decoration:none}
 <h1>Plawan Kumar Rath</h1>
 <p class="tagline">AI Researcher at Meta · Small Language Models, MLIR Compilers, Model Compression &amp; Bias</p>
 <div class="links">
+<a href="https://www.plawanrath.com/">plawanrath.com</a>
 <a href="https://github.com/plawanrath">GitHub</a>
 <a href="https://scholar.google.com/citations?user=7XzuMk8AAAAJ&hl=en">Google Scholar</a>
 <a href="https://huggingface.co/plawanrath">Hugging Face</a>
+<a href="https://medium.com/@plawanrath">Medium</a>
 </div>
+<a class="cta" href="https://www.plawanrath.com/">Visit my personal website — plawanrath.com →</a>
 </header>
 
-<p>I work on making small language models reliable and efficient: generating formally valid code with schema-derived constraints, and measuring how compression techniques — quantization, pruning, and distillation — change model behavior and bias. This page connects each published paper to the code and artifacts behind it, and highlights my open source contributions.</p>
+<p>I work on making small language models reliable and efficient: generating formally valid code with schema-derived constraints, and measuring how compression techniques — quantization, pruning, and distillation — change model behavior and bias. This page is the research-and-code hub: each published paper linked to its code and artifacts, my open source contributions, and the interactive articles where I explain the work. My full personal site lives at <a href="https://www.plawanrath.com/" style="color:var(--accent)">plawanrath.com</a>.</p>
 
 <h2>Research — Papers &amp; Code</h2>
-<p style="color:var(--muted)">Only projects with a public paper (arXiv / Google Scholar) are featured here.</p>
+<p style="color:var(--muted)">Only projects with a public paper (arXiv / Google Scholar) are featured here. Where an interactive explainer exists on plawanrath.com, it is linked alongside the paper and code.</p>
 
 <div class="card">
 <h3>Cross-Dialect Generalization Without Retraining: Benchmarks and Evaluation of Schema-Derived Constrained Decoding for MLIR</h3>
@@ -64,6 +77,7 @@ footer a{color:var(--accent);text-decoration:none}
 <a href="https://arxiv.org/abs/2605.15208">arXiv:2605.15208</a>
 <a href="https://github.com/plawanrath/compression-bias-amplification">Code: compression-bias-amplification</a>
 <a href="https://huggingface.co/collections/plawanrath/quantization-undoes-alignment-ieee-cloud-summit-2026-69fc1cdfe3d46535cc2ba579">Models on Hugging Face</a>
+<a href="https://www.plawanrath.com/articles/quantization-undoes-alignment/">▶ Interactive explainer</a>
 </div>
 </div>
 
@@ -75,6 +89,7 @@ footer a{color:var(--accent);text-decoration:none}
 <a href="https://arxiv.org/abs/2605.08137">arXiv:2605.08137</a>
 <a href="https://github.com/plawanrath/pruning-impact-analysis">Code: pruning-impact-analysis</a>
 <a href="https://huggingface.co/collections/plawanrath/weight-pruning-amplifies-bias-aiiot-2026-69fd6be2a5cbdc6e78a88ee7">Models on Hugging Face</a>
+<a href="https://www.plawanrath.com/articles/smart-pruning-paradox/">▶ Interactive explainer: The Smart Pruning Paradox</a>
 </div>
 </div>
 
@@ -86,6 +101,51 @@ footer a{color:var(--accent);text-decoration:none}
 <a href="https://arxiv.org/abs/2607.28639">arXiv:2607.28639</a>
 <a href="https://github.com/plawanrath/knowledge-distilation-impact-analysis">Code: knowledge-distilation-impact-analysis</a>
 </div>
+</div>
+
+<h2>Writing — Interactive Articles on plawanrath.com</h2>
+<p>The papers above are the formal record. These interactive articles on my <a href="https://www.plawanrath.com/articles/" style="color:var(--accent)">personal website</a> are where I walk through the ideas step by step — including the two explainers that accompany the quantization and pruning papers.</p>
+
+<div class="grid">
+<div class="card">
+<span class="interactive">Interactive article</span>
+<h3><a href="https://www.plawanrath.com/articles/quantization-undoes-alignment/">Quantization Undoes Alignment</a></h3>
+<span class="date">June 22, 2026 · Companion to the IEEE Cloud Summit 2026 paper</span>
+<p>Compress an aligned LLM to 3-bit and 6–21% of items that were never biased develop new stereotypes, while perplexity barely moves. An interactive walkthrough of why aggregate metrics miss fairness-critical damage.</p>
+<div class="meta"><a href="https://www.plawanrath.com/articles/quantization-undoes-alignment/">Read on plawanrath.com →</a><a href="https://arxiv.org/abs/2605.15208">Paper</a></div>
+</div>
+<div class="card">
+<span class="interactive">Interactive article</span>
+<h3><a href="https://www.plawanrath.com/articles/smart-pruning-paradox/">The Smart Pruning Paradox</a></h3>
+<span class="date">May 20, 2026 · Companion to the AIIoT 2026 paper</span>
+<p>Why the best-behaved compression method produces the worst-behaved model. An interactive walkthrough of weight pruning, where Wanda's score quietly removes the circuits responsible for safety.</p>
+<div class="meta"><a href="https://www.plawanrath.com/articles/smart-pruning-paradox/">Read on plawanrath.com →</a><a href="https://arxiv.org/abs/2605.08137">Paper</a></div>
+</div>
+<div class="card">
+<span class="interactive">Interactive article</span>
+<h3><a href="https://www.plawanrath.com/articles/how-llms-actually-think/">How an LLM Actually Thinks</a></h3>
+<span class="date">May 17, 2026</span>
+<p>An interactive walkthrough of what happens inside a transformer when you send it a prompt, and three things the mechanics alone do not predict.</p>
+<div class="meta"><a href="https://www.plawanrath.com/articles/how-llms-actually-think/">Read on plawanrath.com →</a></div>
+</div>
+<div class="card">
+<span class="interactive">Article</span>
+<h3><a href="https://www.plawanrath.com/articles/grammartile-tinytapeout-walkthrough/">Building a Byte-Level Parser on Tiny Tapeout: A Design Walkthrough</a></h3>
+<span class="date">May 9, 2026</span>
+<p>A JSON-grammar coprocessor that fits in two Tiny Tapeout tiles, plus three transferable design patterns and the parts of the TT submission flow that aren't well documented.</p>
+<div class="meta"><a href="https://www.plawanrath.com/articles/grammartile-tinytapeout-walkthrough/">Read on plawanrath.com →</a><a href="https://github.com/plawanrath/grammartile">Code: grammartile</a></div>
+</div>
+</div>
+
+<div class="card">
+<h3>More writing on Medium</h3>
+<p style="color:var(--muted)">Earlier tutorials and deep dives, 2020–2025. Full archive at <a href="https://medium.com/@plawanrath" style="color:var(--accent)">medium.com/@plawanrath</a>.</p>
+<ul class="small-list">
+<li><a href="https://medium.com/@plawanrath/case-study-building-a-multi-agent-research-assistant-with-a2a-protocol-0df1d6eb71c3">Case Study: Building a Multi-Agent Research Assistant with A2A Protocol</a> <span class="date">(2025)</span></li>
+<li><a href="https://medium.com/@plawanrath/model-context-protocol-mcp-in-practice-a-hands-on-tutorial-with-a-macos-file-assistant-example-4822a2aecaf7">Model Context Protocol (MCP) in Practice</a> <span class="date">(2025)</span></li>
+<li><a href="https://medium.com/@plawanrath/fine-tuning-mistral-7b-on-apple-silicon-a-mac-users-journey-with-axolotl-lora-c6ff53858e7d">Fine-Tuning Mistral 7B on Apple Silicon</a> <span class="date">(2025)</span></li>
+<li><a href="https://medium.com/@plawanrath/build-a-neural-network-from-scratch-using-pytorch-e69f41fea857">Build a Neural Network from Scratch Using PyTorch</a> <span class="date">(2023)</span></li>
+</ul>
 </div>
 
 <h2>Open Source Contributions</h2>
@@ -114,7 +174,7 @@ footer a{color:var(--accent);text-decoration:none}
 <p style="color:var(--muted)">Currently: preparing the NeurIPS 2026 poster for the MLIR constrained-decoding paper (Atlanta satellite, December 9–13, 2026) and continuing the compression-and-bias line of work.</p>
 
 <footer>
-<p>© 2026 Plawan Kumar Rath · <a href="https://github.com/plawanrath">github.com/plawanrath</a> · <a href="https://scholar.google.com/citations?user=7XzuMk8AAAAJ&hl=en">Google Scholar</a></p>
+<p>© 2026 Plawan Kumar Rath · <a href="https://www.plawanrath.com/">plawanrath.com</a> · <a href="https://github.com/plawanrath">github.com/plawanrath</a> · <a href="https://scholar.google.com/citations?user=7XzuMk8AAAAJ&hl=en">Google Scholar</a></p>
 </footer>
 </div>
 </body>
