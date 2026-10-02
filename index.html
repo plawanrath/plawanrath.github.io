@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plawan Kumar Rath — Research & Open Source</title>
+<meta name="description" content="Personal page of Plawan Kumar Rath: small language models, MLIR constrained decoding, model compression and bias, and open source contributions.">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:880px;margin:0 auto;padding:48px 24px 64px}
+header{text-align:center;padding:32px 0 8px}
+h1{font-size:2.4rem;margin:0 0 8px}
+.tagline{color:var(--muted);font-size:1.1rem;margin:0}
+.links{margin:20px 0 8px}.links a{color:var(--accent);text-decoration:none;margin:0 10px;font-weight:600}
+.links a:hover{text-decoration:underline}
+h2{border-bottom:1px solid var(--border);padding-bottom:8px;margin-top:44px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:16px 0}
+.card h3{margin:0 0 6px;font-size:1.15rem}
+.venue{color:var(--green);font-weight:600;font-size:.92rem}
+.card p{color:#c9d1d9;margin:10px 0}
+.meta a{color:var(--accent);text-decoration:none;margin-right:14px;font-size:.92rem;font-weight:600}
+.meta a:hover{text-decoration:underline}
+.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 10px;font-size:.78rem;color:var(--muted);margin-right:6px}
+ul{padding-left:20px} li{margin:8px 0}
+.merged{color:var(--green);font-weight:700}
+footer{margin-top:56px;text-align:center;color:var(--muted);font-size:.9rem}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Plawan Kumar Rath</h1>
+<p class="tagline">AI Researcher at Meta · Small Language Models, MLIR Compilers, Model Compression &amp; Bias</p>
+<div class="links">
+<a href="https://github.com/plawanrath">GitHub</a>
+<a href="https://scholar.google.com/citations?user=7XzuMk8AAAAJ&hl=en">Google Scholar</a>
+<a href="https://huggingface.co/plawanrath">Hugging Face</a>
+</div>
+</header>
+
+<p>I work on making small language models reliable and efficient: generating formally valid code with schema-derived constraints, and measuring how compression techniques — quantization, pruning, and distillation — change model behavior and bias. This page connects each published paper to the code and artifacts behind it, and highlights my open source contributions.</p>
+
+<h2>Research — Papers &amp; Code</h2>
+<p style="color:var(--muted)">Only projects with a public paper (arXiv / Google Scholar) are featured here.</p>
+
+<div class="card">
+<h3>Cross-Dialect Generalization Without Retraining: Benchmarks and Evaluation of Schema-Derived Constrained Decoding for MLIR</h3>
+<span class="venue">NeurIPS 2026 · Evaluations &amp; Datasets Track</span>
+<p>Training-free, ODS-aware constrained decoding lets small language models generate MLIR across dialects — arith, func, memref, linalg, and StableHLO — without retraining. The release includes six public benchmarks (410 in-scope NL→MLIR pairs plus held-out and out-of-grammar suites) with validated Croissant metadata.</p>
+<div class="meta">
+<a href="https://arxiv.org/abs/2607.18254">arXiv:2607.18254</a>
+<a href="https://github.com/plawanrath/slm-to-mlir-constrained-emitter">Code: slm-to-mlir-constrained-emitter</a>
+<a href="https://huggingface.co/collections/plawanrath/cross-dialect-mlir-benchmarks-neurips-2026-e-and-d-6ab64ca74edba2b4380216fd">Datasets on Hugging Face</a>
+</div>
+</div>
+
+<div class="card">
+<h3>Quantization Undoes Alignment</h3>
+<span class="venue">IEEE Cloud Summit 2026</span>
+<p>Does post-training quantization amplify social bias? This study quantizes three instruction-tuned models from BF16 down to 3-bit and measures stereotype reliance on the BBQ benchmark across five bias categories. All 15 MLX-format quantized artifacts are published.</p>
+<div class="meta">
+<a href="https://arxiv.org/abs/2605.15208">arXiv:2605.15208</a>
+<a href="https://github.com/plawanrath/compression-bias-amplification">Code: compression-bias-amplification</a>
+<a href="https://huggingface.co/collections/plawanrath/quantization-undoes-alignment-ieee-cloud-summit-2026-69fc1cdfe3d46535cc2ba579">Models on Hugging Face</a>
+</div>
+</div>
+
+<div class="card">
+<h3>Weight Pruning Amplifies Bias</h3>
+<span class="venue">AIIoT 2026</span>
+<p>How does weight pruning change bias in instruction-tuned LLMs headed for edge deployment? A 3 × 3 × 4 grid — three base models, three pruning methods (random, magnitude, Wanda), four sparsities — with all 36 pruned checkpoints released for reproducibility.</p>
+<div class="meta">
+<a href="https://arxiv.org/abs/2605.08137">arXiv:2605.08137</a>
+<a href="https://github.com/plawanrath/pruning-impact-analysis">Code: pruning-impact-analysis</a>
+<a href="https://huggingface.co/collections/plawanrath/weight-pruning-amplifies-bias-aiiot-2026-69fd6be2a5cbdc6e78a88ee7">Models on Hugging Face</a>
+</div>
+</div>
+
+<div class="card">
+<h3>Knowledge Distillation Impact Analysis</h3>
+<span class="venue">arXiv 2026</span>
+<p>How do response-based, logit-based, and combined knowledge distillation affect bias in small instruction-tuned models? Students (SmolLM2, OLMo-2) are distilled from Gemma-2, Mistral, and Phi teachers and evaluated on BBQ and CrowS-Pairs, including refusal-calibration and mitigation analysis.</p>
+<div class="meta">
+<a href="https://arxiv.org/abs/2607.28639">arXiv:2607.28639</a>
+<a href="https://github.com/plawanrath/knowledge-distilation-impact-analysis">Code: knowledge-distilation-impact-analysis</a>
+</div>
+</div>
+
+<h2>Open Source Contributions</h2>
+<p>Merged contributions are the standard I hold this work to. I am also running a sustained program of one merged-quality pull request per week into widely used, highly forked projects.</p>
+
+<div class="card">
+<h3>google/gemma.cpp — Merged</h3>
+<ul>
+<li><span class="merged">Merged May 29, 2026</span> — <a href="https://github.com/google/gemma.cpp/pull/918" style="color:var(--accent)">PR #918: Add Gemma 3 LM-only model variants (fixes #888)</a>. First-class support for text-only Gemma 3 checkpoints (e.g., TranslateGemma) that previously failed to load, with converter plumbing and 128/128 tests passing.</li>
+<li><span class="merged">Merged May 27, 2026</span> — <a href="https://github.com/google/gemma.cpp/pull/917" style="color:var(--accent)">PR #917: Fix flash_attention_test link error on multi-target SIMD builds</a>. Root-caused a Highway <code>HWY_IS_TEST</code> symbol mismatch across SIMD targets.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>In Review / In Flight</h3>
+<ul>
+<li><a href="https://github.com/vllm-project/vllm/pull/43832" style="color:var(--accent)">vllm-project/vllm #43832</a> — Don't mutate M-RoPE state from the draft-path embedding gather (speculative decoding bugfix).</li>
+<li><a href="https://github.com/BerriAI/litellm/pull/28733" style="color:var(--accent)">BerriAI/litellm #28733</a> — Drop whitespace-only system messages before forwarding to Anthropic.</li>
+<li><a href="https://github.com/future-agi/future-agi/pull/1530" style="color:var(--accent)">future-agi/future-agi #1530</a> — Consume OAuth authorization codes atomically to prevent replay.</li>
+</ul>
+<p style="color:var(--muted)">Follow the weekly program on my <a href="https://github.com/plawanrath" style="color:var(--accent)">GitHub profile</a>.</p>
+</div>
+
+<h2>Research Threads</h2>
+<p><span class="badge">Constrained decoding</span><span class="badge">MLIR / compilers</span><span class="badge">Quantization &amp; pruning</span><span class="badge">Bias evaluation</span><span class="badge">Small language models</span><span class="badge">Edge deployment</span></p>
+<p style="color:var(--muted)">Currently: preparing the NeurIPS 2026 poster for the MLIR constrained-decoding paper (Atlanta satellite, December 9–13, 2026) and continuing the compression-and-bias line of work.</p>
+
+<footer>
+<p>© 2026 Plawan Kumar Rath · <a href="https://github.com/plawanrath">github.com/plawanrath</a> · <a href="https://scholar.google.com/citations?user=7XzuMk8AAAAJ&hl=en">Google Scholar</a></p>
+</footer>
+</div>
+</body>
+</html>
